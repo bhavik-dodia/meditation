@@ -91,7 +91,7 @@ class NowPlaying extends StatelessWidget {
                       } else {
                         return IconButton(
                           icon: const Icon(
-                            Icons.replay_outlined,
+                            Icons.replay_rounded,
                             color: Colors.white,
                           ),
                           iconSize: 60.0,
