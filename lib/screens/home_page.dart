@@ -45,14 +45,18 @@ class _HomePageState extends State<HomePage> {
                   elevation: 0.0,
                   toolbarHeight: 0.0,
                 ),
-      body: IndexedStack(
-        index: _currentIndex,
-        children: [
-          Home(),
-          Practices(),
-          Container(),
-          Profile(),
-        ],
+      body: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 300),
+        child: IndexedStack(
+          key: ValueKey(_currentIndex),
+          index: _currentIndex,
+          children: [
+            Home(),
+            Practices(),
+            Container(),
+            Profile(),
+          ],
+        ),
       ),
       bottomSheet:
           Provider.of<Player>(context).isPlaying ? NowPlayingMini() : null,
